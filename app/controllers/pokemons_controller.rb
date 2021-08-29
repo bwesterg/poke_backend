@@ -1,6 +1,6 @@
 class PokemonsController < ApplicationController
 
-  
+  # before_action method?
 
   def index
     response = RestClient.get "https://pokeapi.co/api/v2/pokemon/3"
