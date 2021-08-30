@@ -3,10 +3,19 @@ class PokemonsController < ApplicationController
   # before_action method?
 
   def index
-    response = RestClient.get "https://pokeapi.co/api/v2/pokemon/3"
+    response = RestClient.get "https://pokeapi.co/api/v2/pokemon?offset=0&limit=200"
     result = JSON.parse response
+    api_pokemons = result["results"]
 
-    render json: result
+    pokemons = []
+
+    pokemons = api_pokemons.reduce([]) do |poke_list, api_pokemon|
+      poke_response = RestClient.get api_pokemon["url"]
+      poke_result = JSON.parse poke_response
+      poke_list << poke_result
+    end
+
+    render json: pokemons
   end
 
   def create
