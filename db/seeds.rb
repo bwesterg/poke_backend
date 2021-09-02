@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Trainer.destroy_all
+
+Trainer.create([
+    {
+        name: "Jennifer K",
+        age: 30,
+        professional: true,
+        pokemon: "ivyasaur"
+    },
+    {
+        name: "Dr. Ryan",
+        age: 65,
+        professional: true,
+        pokemon: "pokemon.all"
+    },
+])
