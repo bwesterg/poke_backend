@@ -1,7 +1,7 @@
 class PokemonsController < ApplicationController
 
   def index
-    response = RestClient.get "https://pokeapi.co/api/v2/pokemon?offset=0&limit=50"
+    response = RestClient.get "https://pokeapi.co/api/v2/pokemon?offset=0&limit=10"
     result = JSON.parse response
     api_pokemons = result["results"]
 
