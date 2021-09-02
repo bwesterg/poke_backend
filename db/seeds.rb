@@ -22,3 +22,5 @@ Trainer.create([
         pokemon: "pokemon.all"
     },
 ])
+
+#check rails resources for belongs_to_route
